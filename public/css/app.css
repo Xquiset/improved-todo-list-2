@@ -1,0 +1,35 @@
+/* Placeholder (at the top) */
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+  height: 0;
+}
+
+.ProseMirror {
+  margin: 1rem 0;
+  border: 1px solid rgba(0, 0, 0, 0.38);
+  padding: 1rem;
+  height: 20vh;
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 5px;
+  overflow: auto;
+  resize: vertical;
+}
+.ProseMirror > * + * {
+  margin-top: 0.5em;
+}
+.ProseMirror h1,
+.ProseMirror h2,
+.ProseMirror h3,
+.ProseMirror h4,
+.ProseMirror h5,
+.ProseMirror h6 {
+  line-height: 1.1;
+}
+
+.ProseMirror-focused {
+  outline: none;
+}
+

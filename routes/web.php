@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Create home route
+Route::middleware('auth:sanctum')->get('/', [ItemController::class, 'index'])->name('dashboard');
+
+// Items routes
+Route::resources([
+    'items' => ItemController::class
+], ['middleware' => 'auth:sanctum']);

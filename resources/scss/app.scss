@@ -1,0 +1,48 @@
+@use "sass:map";
+@import '~vuetify/src/styles/styles.sass';
+
+$primary: '#303F9F';
+$secondary: '#424242';
+$accent: '#B79CED';
+$error: '#EF3E36';
+$info: '#17BEBB';
+$success: '#548C2F';
+$warning: '#D65108';
+
+/* Placeholder (at the top) */
+.ProseMirror p.is-editor-empty:first-child::before {
+    content: attr(data-placeholder);
+    float: left;
+    color: map-deep-get($material_light, 'text', 'secondary');
+    pointer-events: none;
+    height: 0;
+}
+
+.ProseMirror {
+
+    margin: 1rem 0;
+    border: 1px solid map-deep-get($material-light, 'text-fields', 'outlined');
+    padding: 1rem;
+    height: 20vh;
+    color: map-deep-get($material-light, 'text', 'primary');
+    border-radius: 5px;
+    overflow: auto;
+    resize: vertical;
+
+    > * + * {
+        margin-top: 0.5em;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        line-height: 1.1;
+    }
+}
+
+.ProseMirror-focused {
+    outline: none;
+}
